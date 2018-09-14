@@ -1,0 +1,6 @@
+data/glove*
+data/words.txt/
+data/chars.txt
+data/tags.txt
+results/*
+*.pyc
