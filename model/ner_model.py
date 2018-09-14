@@ -295,7 +295,7 @@ class ner_model(base_model):
 		Return:
 			a list of list where each sublist has same length
 		'''
-		print '--------pad-sequences--------'
+		# print '--------pad-sequences--------'
 		if nlevels == 1:
 			# 找到sequences中的句子最大长度
 			max_length_sentence = max(map(lambda x: len(x), sequences))
@@ -306,13 +306,13 @@ class ner_model(base_model):
 		if nlevels == 2:
 			# 找到sequence中所有句子的所有单词中字母数最大的单词
 			max_length_word = max([max(map(lambda x: len(x), seq)) for seq in sequences])
-			print max_length_word
+			# print max_length_word
 			sequences_padded, sequences_length = [], []
 			for seq in sequences:
-				print seq
+				# print seq
 				# 将每个句子的每个词都进行填充
 				sp, sl = self._pad_sequences(seq, pad_token, max_length_word)
-				print sp, sl
+				# print sp, sl
 				# 每个句子的字母的表示
 				sequences_padded += [sp]
 				# 每个句子的字母的长度
@@ -503,7 +503,7 @@ class ner_model(base_model):
 
 		# 表示当前的chunk的起点和类型
 		chunk_start, chunk_type = None, None
-		print seq
+		# print seq
 
 		for i, tag_idx in enumerate(seq):
 			# 如果不是entity的一部分
