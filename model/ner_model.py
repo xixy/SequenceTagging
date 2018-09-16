@@ -290,7 +290,7 @@ class ner_model(base_model):
 		对sequence进行填充
 		Args:
 			sequences: a generator of list or tuple
-			pad_token: the token to pa with
+			pad_token: the token to pad with
 			nlevels: padding的深度，如果是1，则表示对词进行填充，如果是2表示对字进行填充
 		Return:
 			a list of list where each sublist has same length
@@ -335,6 +335,8 @@ class ner_model(base_model):
 	def _pad_sequences(self, sequences, pad_token, max_length):
 		'''
 		对sequences进行填充
+		Args:
+			pad_token: the token to pad with
 		'''
 		sequences_padded, sequences_lengths = [], []
 		for sequence in sequences:
